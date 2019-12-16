@@ -101,7 +101,7 @@ while True:
     while not msg == '':
         # if message begins with "1", add the client to the connection list.
         if msg_split[0] == "1":
-            add_new_connection(server_ip, msg_split[1], msg_split[2], connections)
+            add_new_connection('0.0.0.0', msg_split[1], msg_split[2], connections)
             msg = client_socket.recv(1024)
             continue
         # if message begins with "2", search for the relevant files and return the results to the client.

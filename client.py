@@ -117,11 +117,11 @@ if connection_type == 1:
             msg = raw_input("Search: ")
             continue
         # if the server returned valid resuls, handle them and print a menu to the user.
-        results = handle_data(options.decode())
+        results = handle_data(options)
         # let the client choose one option.
         choice = raw_input("Choose: ")
         # if choice is invalid, ignore it.
-        if int(choice.encode()) < 1 or int(choice.encode()) > len(results):
+        if (int(choice.encode()) < 1) or (int(choice.encode()) > len(results)):
             msg = raw_input("Search: ")
             continue
         # if choice is valid, get the file owner's details and connect to him to request the file.
